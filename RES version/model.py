@@ -23,7 +23,7 @@ class RioluNet(nn.Module):
         
         with torch.no_grad():
             x = self.encoder(image).unsqueeze(0)
-            states = None
+            states = "<SOS>"
             
             for _ in range(maxlength):
                 hiddens, states = self.decoder.lstm(x, states)
