@@ -1,0 +1,4 @@
+embed_size: 256
+hidden_size: 256
+num_layers: 1
+num_epochs: 5

@@ -7,6 +7,7 @@ from torch.utils.tensorboard import SummaryWriter
 from model import RioluNet
 from utils import get_loader, load_checkpoint, save_checkpoint
 import os
+import yaml
 
 
 
@@ -18,12 +19,15 @@ def train(weight):
         load_model = True
     loader, dataset = get_loader()
 
+    with open('config.yaml') as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
+
     #HyperParams
-    embed_size = 256
-    hidden_size = 256
+    embed_size = config["embed_size"]
+    hidden_size = config["hidden_size"]
     vocab_size = len(dataset.vocab)
-    num_layers = 1
-    num_epochs = 5
+    num_layers = config["num_layers"]
+    num_epochs = config["num_epochs"]
     learning_rate = 3e-4
 
 
