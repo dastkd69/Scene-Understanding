@@ -5,7 +5,7 @@ import spacy
 import torch
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, Dataset
-import torchvision
+from torchvision import models
 from PIL import Image
 from torchvision.transforms import transforms
 
@@ -14,12 +14,13 @@ from torchvision.transforms import transforms
 spacy_eng = spacy.load("en_core_web_sm")
 path2img = "assets/Images"
 path2cap = "assets/captions.txt"
-transform = transforms.Compose([
-                                transforms.Resize((256, 256)),
-                                transforms.RandomCrop((224, 224)),
-                                transforms.ToTensor(),
-                                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-                            ])
+# transform = transforms.Compose([
+#                                 transforms.Resize((256, 256)),
+#                                 transforms.RandomCrop((224, 224)),
+#                                 transforms.ToTensor(),
+#                                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+#                             ])
+transform = models.ResNet50_Weights.DEFAULT.transforms()
 
 
 

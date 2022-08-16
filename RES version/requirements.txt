@@ -50,10 +50,10 @@ tensorboard==2.9.1
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 thinc==8.1.0
-torch==1.12.0+cpu
+torch==1.12.0
 torch-tb-profiler==0.4.0
-torchaudio==0.12.0+cpu
-torchvision==0.13.0+cpu
+torchaudio==0.12.0
+torchvision==0.13.0
 tqdm==4.64.0
 typer==0.4.2
 typing_extensions==4.3.0
